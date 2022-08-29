@@ -1,5 +1,10 @@
 <template>
-  <div id="bg">
+  <div
+    id="bg"
+    :class="
+      typeof waether.main != undefined && water.main.temp_min > 16 ? warm : ''
+    "
+  >
     <main class="" style="">
       <div class="searchbox mt-6 md:mt-20">
         <input
@@ -24,8 +29,8 @@
           <h1
             class="date text-center text-white font-semibold italic text-xl pt-4"
           >
-          {{setDate()}}
-</h1>
+            {{ setDate() }}
+          </h1>
         </div>
 
         <div class="weather-degree rounded-md">
@@ -70,7 +75,15 @@ export default {
         "november",
         "december",
       ],
-      days:['sunday','monday','tuesday','wednesday','thursday','friday','saturday'],
+      days: [
+        "sunday",
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+      ],
     };
   },
   methods: {
@@ -94,8 +107,8 @@ export default {
       let d = new Date();
       let month = this.months[d.getMonth()];
       let day = this.days[d.getDay()];
-      let date= d.getDate();
-      let year=d.getFullYear();
+      let date = d.getDate();
+      let year = d.getFullYear();
       return `${day} ${date} ${month}, ${year}`;
     },
   },
@@ -141,6 +154,9 @@ main {
 .weather-type .weather-name {
   text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
 }
+/* .warm{
+  background-image: url('@/assets/');
+} */
 @media screen {
   /* main{
     
