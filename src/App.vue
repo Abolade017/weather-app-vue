@@ -1,6 +1,7 @@
 <template>
   <div id="nav">
     <Weather />
+    <!-- <router-view /> -->
   </div>
 </template>
 

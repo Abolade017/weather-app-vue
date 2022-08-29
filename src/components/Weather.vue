@@ -2,7 +2,7 @@
   <div
     id="bg"
     :class="
-      typeof weather.main != undefined && weather.main.temp_min > 16 ? warm : ''
+      typeof weather.main != 'undefined' && weather.main.temp > 16 ? warm : ''
     "
   >
     <main class="" style="">
@@ -17,8 +17,7 @@
       </div>
       <div
         class="weather-wrap flex flex-col justify-center items-center space-y-10 mt-10 md:mt-10"
-        v-if="typeof weather.main != 'undefined'"
-      >
+        v-if="typeof weather.main != 'undefined'" >
         <div class="location-box">
           <h1
             class="location text-xl md:text-3xl font-bold text-white text-center"
@@ -121,6 +120,9 @@ export default {
   background-position: bottom;
   transition: 0.4s;
 }
+#bg .warm{
+  background-image: url('../assets/images/warm-weather.jpg');
+}
 main {
   min-height: 100vh;
   padding: 25px;
@@ -154,9 +156,7 @@ main {
 .weather-type .weather-name {
   text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
 }
-/* .warm{
-  background-image: url('@/assets/');
-} */
+
 @media screen {
   /* main{
     
