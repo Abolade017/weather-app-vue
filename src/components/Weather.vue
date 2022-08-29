@@ -2,7 +2,7 @@
   <div
     id="bg"
     :class="
-      typeof waether.main != undefined && water.main.temp_min > 16 ? warm : ''
+      typeof weather.main != undefined && weather.main.temp_min > 16 ? warm : ''
     "
   >
     <main class="" style="">
